@@ -1,8 +1,10 @@
+import { Header } from "./components";
+
 function App() {
   return (
-    <>
-      <h1>sss</h1>
-    </>
+    <div className="container">
+      <Header />
+    </div>
   );
 }
 

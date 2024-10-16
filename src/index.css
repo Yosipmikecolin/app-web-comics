@@ -2,4 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  background-color: rgba(204, 206, 219, 0.397);
+}
+
+p {
+  font-weight: 300;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
 }
