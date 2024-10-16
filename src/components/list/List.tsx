@@ -5,7 +5,9 @@ export const List = () => {
   const { data, isLoading } = getComics();
 
   return isLoading ? (
-    <h1>Cargando</h1>
+   <div className={classes['container-loader']}>
+     <div className={classes.loader}/>
+   </div>
   ) : (
     <section className={classes["container-list"]}>
       {data?.map((comic) => (
