@@ -1,6 +1,7 @@
 export interface Episode {
   aliases: null | string[];
   api_detail_url: string;
+  cover_date:string
   air_date: string;
   date_added: string;
   date_last_updated: string;
