@@ -5,6 +5,7 @@ import "./index.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Details, Home } from "./views/index.ts";
+import { NoFound } from "./views/not-found/NoFound.tsx";
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
@@ -13,7 +14,8 @@ createRoot(document.getElementById("root")!).render(
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/:id" Component={Details} />
+          <Route path="/details/:id" Component={Details} />
+          <Route path="*" Component={NoFound} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

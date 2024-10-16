@@ -1,15 +1,25 @@
 import { useState } from "react";
 import { getComics } from "../../api/queries";
 import classes from "./List.module.css";
+import { useNavigate } from "react-router-dom";
+import { useComic } from "../../hooks";
+import { Comic } from "../../interface";
 
 export const List = () => {
   const paginatios = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [page, setPage] = useState(1);
   const { data, isLoading, refetch } = getComics(page);
+  const { setComic } = useComic();
+  const navigate = useNavigate();
 
   const selectPage = (page: number) => {
     setPage(page);
     refetch();
+  };
+
+  const detailComic = (comic: Comic) => {
+    setComic(comic);
+    navigate(`/details/${comic.id}`);
   };
 
   return isLoading ? (
@@ -25,7 +35,7 @@ export const List = () => {
             <div className={classes.content}>
               <h4>{comic.name.slice(0, 24)}</h4>
               <p>{comic.cover_date}</p>
-              <button>Ver detalle</button>
+              <button onClick={() => detailComic(comic)}>Ver detalle</button>
             </div>
           </div>
         ))}

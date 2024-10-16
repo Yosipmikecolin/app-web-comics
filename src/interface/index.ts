@@ -1,4 +1,4 @@
-export interface Episode {
+export interface Comic {
   aliases: null | string[];
   api_detail_url: string;
   cover_date:string
