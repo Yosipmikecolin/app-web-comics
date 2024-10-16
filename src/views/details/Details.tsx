@@ -1,12 +1,44 @@
+import { useEffect } from "react";
 import { useComic } from "../../hooks";
 import classes from "./Details.module.css";
+import { useNavigate } from "react-router-dom";
 
 export const Details = () => {
   const { comic } = useComic();
-  console.log("comic", comic);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!comic) {
+      navigate("/");
+    }
+  }, [comic]);
+
   return (
-    <div className="container">
-      <div>Details</div>
-    </div>
+    comic && (
+      <div className={classes["container-details"]}>
+        <button
+          className={classes["button-back"]}
+          onClick={() => navigate("/")}
+        >
+          Atras
+        </button>
+        <img src={comic?.image.medium_url} />
+        <h1>{comic?.name}</h1>
+        <strong>Fecha de la portada</strong>
+        <p>{comic.cover_date}</p>
+
+        <strong>Fecha de actualizacion</strong>
+        <p>{comic.date_last_updated}</p>
+
+        <strong>Nombre del volumen</strong>
+        <p>{comic.volume.name}</p>
+
+        <strong>Fecha de la portada</strong>
+        <p>{comic.cover_date}</p>
+
+        <strong>Descripcion:</strong>
+        <div dangerouslySetInnerHTML={{ __html: comic?.description }} />
+      </div>
+    )
   );
 };

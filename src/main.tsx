@@ -11,12 +11,16 @@ const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter basename="/">
-        <Routes>
+      <BrowserRouter basename="/" >
+      <div className="container">
+      <Routes>
           <Route path="/" Component={Home} />
           <Route path="/details/:id" Component={Details} />
           <Route path="*" Component={NoFound} />
         </Routes>
+
+      </div>
+
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>

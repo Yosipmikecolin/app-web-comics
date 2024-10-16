@@ -2,7 +2,7 @@ import { Header, List } from "../../components";
 
 export const Home = () => {
   return (
-    <div className="container">
+    <div>
       <Header />
       <List />
     </div>

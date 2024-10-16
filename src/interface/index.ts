@@ -1,8 +1,7 @@
 export interface Comic {
   aliases: null | string[];
   api_detail_url: string;
-  cover_date:string
-  air_date: string;
+  cover_date: string;
   date_added: string;
   date_last_updated: string;
   deck: null | string;
@@ -10,10 +9,12 @@ export interface Comic {
   has_staff_review: boolean;
   id: number;
   image: Image;
-  episode_number: string;
+  associated_images: any[];
+  issue_number: string;
   name: string;
   site_detail_url: string;
-  series: Series;
+  store_date: string;
+  volume: Volume;
 }
 
 interface Image {
@@ -29,7 +30,7 @@ interface Image {
   image_tags: string;
 }
 
-interface Series {
+interface Volume {
   api_detail_url: string;
   id: number;
   name: string;
