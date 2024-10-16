@@ -1,12 +1,10 @@
-import { Header, List } from "./components";
+import { Header, List } from "../../components";
 
-function App() {
+export const Home = () => {
   return (
     <div className="container">
       <Header />
       <List />
     </div>
   );
-}
-
-export default App;
+};
