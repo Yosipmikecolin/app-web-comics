@@ -1,14 +1,7 @@
-import { useEffect } from "react";
-import { getAllComics } from "../../axios/request";
+import { getComics } from "../../api/queries";
 
 export const List = () => {
-  const getComics = async () => {
-    await getAllComics();
-  };
+  const { data, isLoading } = getComics();
 
-  useEffect(() => {
-    getComics();
-  }, []);
-
-  return <div>List</div>;
+  return isLoading ? <h1>Cargando</h1> : <div>List</div>;
 };
