@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 interface User {
   user?: string;
-  setUser: (comic: string) => void;
+  setUser: (comic?: string) => void;
 }
 
 export const useUser = create<User>((set) => ({
