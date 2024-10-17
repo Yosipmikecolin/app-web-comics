@@ -41,6 +41,7 @@
   justify-content: center;
   gap: 5px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .container-login span > a {

@@ -40,6 +40,10 @@
   align-items: center;
 }
 
+.button-wish:hover {
+  background-color: #d65151;
+}
+
 .button-close-1 {
   background-color: #b63939;
   color: white;

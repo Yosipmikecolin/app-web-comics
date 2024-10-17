@@ -28,3 +28,12 @@ export const loginUser = async (user: { email: string; password: string }) => {
     throw error;
   }
 };
+
+export const saveWish = async (comic: { name: string; image: string }) => {
+  try {
+    const response = await axiosConfig.post("/save-comic", comic);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
