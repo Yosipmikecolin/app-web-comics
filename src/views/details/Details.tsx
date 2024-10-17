@@ -3,7 +3,7 @@ import { useComic } from "../../hooks";
 import classes from "./Details.module.css";
 import { useNavigate } from "react-router-dom";
 
-export const Details = () => {
+const Details = () => {
   const { comic } = useComic();
   const navigate = useNavigate();
 
@@ -42,3 +42,5 @@ export const Details = () => {
     )
   );
 };
+
+export default Details;

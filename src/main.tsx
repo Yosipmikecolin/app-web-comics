@@ -4,23 +4,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Details, Home } from "./views/index.ts";
-import { NoFound } from "./views/not-found/NoFound.tsx";
+import { Details, Home, NoFound } from "./views/index.ts";
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter basename="/" >
-      <div className="container">
-      <Routes>
-          <Route path="/" Component={Home} />
-          <Route path="/details/:id" Component={Details} />
-          <Route path="*" Component={NoFound} />
-        </Routes>
-
-      </div>
-
+      <BrowserRouter basename="/">
+        <div className="container">
+          <Routes>
+            <Route path="/" Component={Home} />
+            <Route path="/details/:id" Component={Details} />
+            <Route path="*" Component={NoFound} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>

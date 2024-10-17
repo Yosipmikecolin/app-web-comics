@@ -1,6 +1,5 @@
+const NoFound = () => {
+  return <div>NoFound</div>;
+};
 
-export const NoFound = () => {
-  return (
-    <div>NoFound</div>
-  )
-}
+export default NoFound;

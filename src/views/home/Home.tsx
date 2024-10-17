@@ -1,6 +1,6 @@
 import { Header, List } from "../../components";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div>
       <Header />
@@ -8,3 +8,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

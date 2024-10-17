@@ -9,6 +9,7 @@
 
 body {
   background-color: rgba(204, 206, 219, 0.397);
+  overflow-x: hidden;
 }
 
 p {

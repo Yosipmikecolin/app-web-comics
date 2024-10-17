@@ -1,4 +1,4 @@
-.container-header {
+.container-cover {
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -14,51 +14,51 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.container-header h1 {
+.container-cover h1 {
   font-size: 50px;
   font-weight: bold;
   color: orange;
 }
 
-.container-header p {
+.container-cover p {
   font-size: 20px;
 }
 
-.container-header img {
+.container-cover img {
   border-radius: 10px;
   width: 480px;
   height: 450px;
 }
 
 @media (max-width: 1271px) {
-  .container-header img {
+  .container-cover img {
     width: 300px;
     height: 300px;
     object-fit: cover;
   }
 
-  .container-header h1 {
+  .container-cover h1 {
     font-size: 30px;
   }
 
-  .container-header p {
+  .container-cover p {
     font-size: medium;
   }
 }
 
 @media (max-width: 795px) {
-  .container-header {
+  .container-cover {
     flex-direction: column;
     text-align: center;
   }
 }
 
 @media (max-width: 409px) {
-  .container-header img {
+  .container-cover img {
     width: 100%;
   }
 
-  .container-header h1 {
+  .container-cover h1 {
     font-size: 25px;
   }
 }
