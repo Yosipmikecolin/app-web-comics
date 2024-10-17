@@ -22,7 +22,7 @@ const Signup = () => {
         const reponse = await mutateAsync(values);
         const { username, token } = reponse;
         localStorage.setItem("username", username);
-        localStorage.setItem("token", token);
+        localStorage.setItem("token-mocion", token);
         toast.success("Registro exitoso");
         setValues({
           name: "",

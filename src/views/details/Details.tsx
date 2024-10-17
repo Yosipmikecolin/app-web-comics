@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { useComic } from "../../hooks";
+import { useComic } from "../../hooks/useComic";
 import classes from "./Details.module.css";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const Details = () => {
   const { comic } = useComic();
@@ -20,6 +21,7 @@ const Details = () => {
           className={classes["button-back"]}
           onClick={() => navigate("/")}
         >
+          <ArrowLeft />
           Atras
         </button>
         <img src={comic?.image.medium_url} />

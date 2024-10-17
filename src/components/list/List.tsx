@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getComics } from "../../api/queries";
 import classes from "./List.module.css";
 import { useNavigate } from "react-router-dom";
-import { useComic } from "../../hooks";
+import { useComic } from "../../hooks/useComic";
 import { Comic } from "../../interface";
 
 const List = () => {

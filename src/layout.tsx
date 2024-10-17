@@ -1,8 +1,19 @@
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Details, Home, NoFound, Signup } from "./views";
+import { useUser } from "./hooks/useUser";
+import { useEffect } from "react";
 
 const Layout = () => {
+  const { setUser } = useUser();
+
+  useEffect(() => {
+    const username = localStorage.getItem("username");
+    if (username) {
+      setUser(username);
+    }
+  }, []);
+
   return (
     <BrowserRouter basename="/">
       <Toaster />
