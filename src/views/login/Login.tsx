@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
-import { mutationSignup } from "../../api/mutation";
+import { mutationLogin } from "../../api/mutation";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { ArrowLeft } from "lucide-react";
 import { useUser } from "../../hooks/useUser";
-import classes from "./Signup.module.css";
+import classes from "./Login.module.css";
 
-const Signup = () => {
-  const { mutateAsync, isPending } = mutationSignup();
+const Login = () => {
+  const { mutateAsync, isPending } = mutationLogin();
   const navigate = useNavigate();
   const { user, setUser } = useUser();
 
   const [values, setValues] = useState({
-    name: "",
-    lastname: "",
     email: "",
     password: "",
   });
@@ -27,16 +25,14 @@ const Signup = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
-      if (values.name && values.lastname && values.email && values.password) {
+      if (values.email && values.password) {
         const reponse = await mutateAsync(values);
         const { username, token } = reponse;
         localStorage.setItem("username", username);
         localStorage.setItem("token-mocion", token);
         setUser(username);
-        toast.success("Registro exitoso");
+        toast.success("Login exitoso");
         setValues({
-          name: "",
-          lastname: "",
           email: "",
           password: "",
         });
@@ -66,25 +62,8 @@ const Signup = () => {
           </button>
         </Link>
 
-        <form className={classes["container-signup"]} onSubmit={handleSubmit}>
-          <h1>Registrarse</h1>
-          <div className={classes["container-inputs"]}>
-            <label>Nombre</label>
-            <input
-              value={values.name}
-              onChange={(e) => setValues({ ...values, name: e.target.value })}
-            />
-          </div>
-
-          <div className={classes["container-inputs"]}>
-            <label>Apellidos</label>
-            <input
-              value={values.lastname}
-              onChange={(e) =>
-                setValues({ ...values, lastname: e.target.value })
-              }
-            />
-          </div>
+        <form className={classes["container-login"]} onSubmit={handleSubmit}>
+          <h1>Iniciar sesión</h1>
 
           <div className={classes["container-inputs"]}>
             <label>Email</label>
@@ -106,16 +85,12 @@ const Signup = () => {
             />
           </div>
           <button disabled={isPending}>
-            {isPending ? (
-              <div className={classes.loader} />
-            ) : (
-              "Registrar usuario"
-            )}{" "}
+            {isPending ? <div className={classes.loader} /> : "Iniciar sesión"}{" "}
           </button>
           <span>
-            ¿Ya tienes cuenta?
-            <Link to="/login">
-              <strong>Incia sesión</strong>
+            ¿No tienes cuenta?
+            <Link to="/signup">
+              <strong>Crear una cuenta</strong>
             </Link>
           </span>
         </form>
@@ -124,4 +99,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

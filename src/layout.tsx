@@ -1,6 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Details, Home, NoFound, Signup } from "./views";
+import { Details, Home, NoFound, Signup, Login } from "./views";
 import { useUser } from "./hooks/useUser";
 import { useEffect } from "react";
 
@@ -21,6 +21,7 @@ const Layout = () => {
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/signup" Component={Signup} />
+          <Route path="/login" Component={Login} />
           <Route path="/details/:id" Component={Details} />
           <Route path="*" Component={NoFound} />
         </Routes>

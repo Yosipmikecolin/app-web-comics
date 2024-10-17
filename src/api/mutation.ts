@@ -1,8 +1,14 @@
 import { useMutation } from "@tanstack/react-query";
-import { registerUser } from "./request";
+import { loginUser, registerUser } from "./request";
 
-export const mutationUser = () => {
+export const mutationSignup = () => {
   return useMutation({
     mutationFn: registerUser,
+  });
+};
+
+export const mutationLogin = () => {
+  return useMutation({
+    mutationFn: loginUser,
   });
 };

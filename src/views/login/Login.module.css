@@ -1,4 +1,4 @@
-.container-signup {
+.container-login {
   width: 500px;
   margin: auto;
   margin-top: 100px;
@@ -35,7 +35,7 @@
   gap: 5px;
 }
 
-.container-signup span {
+.container-login span {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@
   margin-top: 10px;
 }
 
-.container-signup span > a {
+.container-login span > a {
   font-weight: 700;
   color: #d3aa17;
 }
@@ -58,7 +58,7 @@
   font-size: medium;
 }
 
-.container-signup button {
+.container-login button {
   width: 100%;
   margin-top: 20px;
   border: none;
@@ -74,7 +74,7 @@
   transition: 500ms ease;
 }
 
-.container-signup button:hover {
+.container-login button:hover {
   background-color: #eccd5b;
 }
 
@@ -101,7 +101,7 @@
 }
 
 @media (max-width: 589px) {
-  .container-signup {
+  .container-login {
     width: 100%;
   }
 }

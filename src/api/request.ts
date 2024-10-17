@@ -19,3 +19,12 @@ export const registerUser = async (user: User) => {
     throw error;
   }
 };
+
+export const loginUser = async (user: { email: string; password: string }) => {
+  try {
+    const response = await axiosConfig.post("/login-user", user);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
