@@ -3,17 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   font-style: normal;
 }
 
 body {
   background-color: rgba(204, 206, 219, 0.397);
   overflow-x: hidden;
-}
-
-p {
-  font-weight: 300;
 }
 
 li {

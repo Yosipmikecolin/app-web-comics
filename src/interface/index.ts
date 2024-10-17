@@ -36,3 +36,10 @@ interface Volume {
   name: string;
   site_detail_url: string;
 }
+
+export interface User {
+  name: string;
+  lastname: string;
+  email: string;
+  password: string;
+}
