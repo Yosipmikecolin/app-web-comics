@@ -11,10 +11,11 @@ const Header = () => {
         <div>
           <h1>Batman Comics premium</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-            tempore, optio voluptatem ab dolores cumque minus autem deserunt
-            reprehenderit. Ab a eveniet magnam ullam doloremque amet
-            consequuntur, sint quasi quas.
+            Una figura imponente de Batman se alza en el centro de la portada,
+            con su capa oscura y su máscara de murciélago destacando en la
+            oscuridad. Detrás de él, la ciudad de Gotham se extiende en una
+            mezcla de luces y sombras, con la silueta del edificio de la Mansión
+            Wayne visible en la distancia.
           </p>
         </div>
       </div>
