@@ -37,7 +37,7 @@
   border-radius: 10px;
 }
 
-.button-wish {
+.button-wish-1 {
   background-color: #f95454;
   color: white;
   border: none;
@@ -52,7 +52,21 @@
   gap: 10px;
 }
 
-.button-wish:hover {
+.button-wish-2 {
+  background-color: #b43030;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  font-size: medium;
+  transition: 500ms ease;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-wish-1:hover {
   background-color: #d65151;
 }
 

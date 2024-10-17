@@ -7,12 +7,17 @@ import { useUser } from "../../hooks/useUser";
 import { Comic } from "../../interface";
 import { mutationWish } from "../../api/mutation";
 import toast from "react-hot-toast";
+import { useWish } from "../../hooks/useWish";
+import { getWish } from "../../api/queries";
 
 const Details = () => {
   const { comic } = useComic();
   const { user } = useUser();
   const navigate = useNavigate();
   const { mutateAsync, isPending } = mutationWish();
+
+  const { refetch } = getWish();
+  const { wishes } = useWish();
 
   useEffect(() => {
     if (!comic) {
@@ -26,6 +31,7 @@ const Details = () => {
         navigate("/login");
       } else {
         await mutateAsync({ name: comic.name, image: comic.image.medium_url });
+        refetch();
         toast.success("Comic guardado");
       }
     } catch (error) {
@@ -44,19 +50,24 @@ const Details = () => {
           Atras
         </button>
         <img src={comic?.image.medium_url} />
-        <button
-          onClick={() => addWish(comic)}
-          className={classes["button-wish"]}
-        >
-          {isPending ? (
-            "..."
-          ) : (
-            <>
-              <ThumbsUp color="white" />
-              <p>Me gusta</p>
-            </>
-          )}
-        </button>
+        {wishes.find((i) => i.name === comic.name) ? (
+          <button className={classes["button-wish-2"]}>Te gusta</button>
+        ) : (
+          <button
+            onClick={() => addWish(comic)}
+            className={classes["button-wish-1"]}
+          >
+            {isPending ? (
+              "..."
+            ) : (
+              <>
+                <ThumbsUp color="white" />
+                <p>Me gusta</p>
+              </>
+            )}
+          </button>
+        )}
+
         <h1>{comic?.name}</h1>
         <strong>Fecha de la portada</strong>
         <p>{comic.cover_date}</p>

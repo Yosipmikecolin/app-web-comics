@@ -50,3 +50,12 @@ export const saveWish = async (comic: { name: string; image: string }) => {
     throw error;
   }
 };
+
+export const deleteWish = async (idComic: number) => {
+  try {
+    const response = await axiosConfig.delete(`/delete-comic/${idComic}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

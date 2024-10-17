@@ -1,6 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Details, Home, NoFound, Signup, Login } from "./views";
+import { Details, Home, NoFound, Signup, Login, Wishes } from "./views";
 import { useUser } from "./hooks/useUser";
 import { useEffect } from "react";
 import { useWish } from "./hooks/useWish";
@@ -33,6 +33,7 @@ const Layout = () => {
           <Route path="/signup" Component={Signup} />
           <Route path="/login" Component={Login} />
           <Route path="/details/:id" Component={Details} />
+          <Route path="/wishes" Component={Wishes} />
           <Route path="*" Component={NoFound} />
         </Routes>
       </div>
