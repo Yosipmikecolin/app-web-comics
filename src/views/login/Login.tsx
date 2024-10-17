@@ -44,11 +44,7 @@ const Login = () => {
       }
     } catch (error: any) {
       const { message } = error.response.data;
-      if (message.includes("duplicate")) {
-        toast.error("El correo ya se encuentra registrado");
-      } else {
-        toast.error("Ocurrio un error inesperado");
-      }
+      toast.error(message);
     }
   };
 

@@ -12,5 +12,8 @@ export const getWish = () => {
   return useQuery({
     queryKey: ["wishes"],
     queryFn: getWishes,
+    staleTime: 60 * 60 * 1000,
+    refetchOnWindowFocus:false
+    
   });
 };

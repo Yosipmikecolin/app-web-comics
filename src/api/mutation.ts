@@ -22,5 +22,9 @@ export const mutationWish = () => {
 export const mutationDeleteWish = () => {
   return useMutation({
     mutationFn: deleteWish,
+    onError: (error) => {
+      console.error("Error during deletion:", error);
+    },
   });
 };
+

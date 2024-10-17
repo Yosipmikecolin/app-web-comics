@@ -28,7 +28,7 @@ const Menu = () => {
         {user && (
           <div className={classes["container-buttons"]}>
             <li>
-              <Link to="/login" className={classes["button-wish"]}>
+              <Link to="/wishes" className={classes["button-wish"]}>
                 <ThumbsUp color="white" />
               </Link>
             </li>

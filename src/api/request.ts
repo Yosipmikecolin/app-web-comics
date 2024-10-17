@@ -19,7 +19,6 @@ export const getWishes = async () => {
     }>(`/get-comics-wishes`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching comics:", error);
     throw error;
   }
 };
@@ -51,11 +50,15 @@ export const saveWish = async (comic: { name: string; image: string }) => {
   }
 };
 
-export const deleteWish = async (idComic: number) => {
+export const deleteWish = async (idComic: string) => {
   try {
     const response = await axiosConfig.delete(`/delete-comic/${idComic}`);
     return response.data;
-  } catch (error) {
-    throw error;
+  } catch (error: any) {
+    // Verificar si es un error relacionado con la autenticación caducada
+    if (error.response && error.response.status === 401) {
+      console.error("Token expired or invalid:", error.response.data);
+    }
+    throw error; // Asegurarse de que el error se propague correctamente
   }
 };

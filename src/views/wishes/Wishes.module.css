@@ -1,0 +1,135 @@
+.container-wishes {
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+
+.container-wishes > h1 {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.container-card-wish {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.button-back {
+  background-color: #f8c716;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: medium;
+  transition: 500ms ease;
+}
+
+.button-delete {
+  width: 200px;
+  background-color: orangered;
+  font-size: medium;
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 15px;
+  transition: 500ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-delete:hover {
+  background-color: rgba(253, 90, 30, 0.753);
+}
+
+.card-wish {
+  width: 300px;
+  height: 540px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-wish > img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-no-wisth {
+  width: 500px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loader-primary {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #f8c716;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 500ms linear infinite;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid rgb(141, 7, 2);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 500ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 774px) {
+  .container-wishes > h1 {
+    text-align: center;
+  }
+
+  .container-card-wish {
+    justify-content: center;
+  }
+
+  .card-no-wisth {
+    width: 100%;
+    text-align: center;
+  }
+}
