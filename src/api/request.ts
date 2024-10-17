@@ -11,6 +11,19 @@ export const getAllComics = async (page: number) => {
   }
 };
 
+export const getWishes = async () => {
+  try {
+    const response = await axiosConfig.get<{
+      comics: { name: string; image: string; _id: string }[];
+      message: string;
+    }>(`/get-comics-wishes`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching comics:", error);
+    throw error;
+  }
+};
+
 export const registerUser = async (user: User) => {
   try {
     const response = await axiosConfig.post("/register-user", user);

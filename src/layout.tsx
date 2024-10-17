@@ -3,9 +3,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Details, Home, NoFound, Signup, Login } from "./views";
 import { useUser } from "./hooks/useUser";
 import { useEffect } from "react";
+import { useWish } from "./hooks/useWish";
+import { getWish } from "./api/queries";
 
 const Layout = () => {
   const { setUser } = useUser();
+  const { data } = getWish();
+  const { setWishes } = useWish();
 
   useEffect(() => {
     const username = localStorage.getItem("username");
@@ -13,6 +17,12 @@ const Layout = () => {
       setUser(username);
     }
   }, []);
+
+  useEffect(() => {
+    if (data?.comics.length) {
+      setWishes(data.comics);
+    }
+  }, [data]);
 
   return (
     <BrowserRouter basename="/">
