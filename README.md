@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Proyecto de Cómics 🗞️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web que permite a los usuarios explorar una lista de cómics, ver los detalles de cada uno, y marcar sus favoritos. Está construido con tecnologías modernas como React y cuenta con un diseño responsivo para ofrecer una experiencia óptima en diferentes dispositivos.
 
-Currently, two official plugins are available:
+## Características ✨
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Lista de Cómics**: Explora una lista de cómics y consulta información detallada de cada uno.
+- **Favoritos**: Guarda tus cómics favoritos para acceder a ellos fácilmente.
+- **Rutas Controladas**: Navegación eficiente y controlada con `react-router-dom`.
+- **Gestión Global del Estado**: Implementación de `Zustand` para la gestión del estado de la aplicación.
+- **Manejo de Peticiones**: Uso de `Axios` para la comunicación con APIs y `React Query` para la gestión y el almacenamiento en caché de los datos.
+- **CSS Módulos**: Estilos encapsulados para componentes con CSS Módulos.
+- **Diseño Responsivo**: La interfaz está optimizada para dispositivos móviles, tablets y pantallas de escritorio.
+- **Tipado con Interfaces**: Se emplea tipado fuerte mediante interfaces para mejorar la legibilidad y la mantenibilidad del código.
 
-## Expanding the ESLint configuration
+## Tecnologías Utilizadas 🚀
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [React](https://reactjs.org/)
+- [React Router DOM](https://reactrouter.com/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [Axios](https://axios-http.com/)
+- [React Query](https://tanstack.com/query/v4)
+- [CSS Módulos](https://github.com/css-modules/css-modules)
+- [Tipado con Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
-- Configure the top-level `parserOptions` property like this:
+## Video de explicación 📹
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+(https://drive.google.com/file/d/17ZbUKQiLTWA9mpAd6M9Uy6fxy3jfHiXr/view?usp=sharing)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Requisitos 🛞
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Es necesario que el usuario descargue y ejecute primero la aplicación de backend para que esta aplicación funcione correctamente.
+(https://github.com/Yosipmikecolin/app-backend-comics)
